@@ -12,6 +12,7 @@
        <p> <a href="/cart/add/{{ products[i]["pid"] }}"> {{ products[i]["name"] }} </a> </p>
     % end
 </div>
+<a href="/logout"> log out </a>
 
    
 </body>
