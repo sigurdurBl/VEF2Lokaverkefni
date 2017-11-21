@@ -81,6 +81,49 @@ def logout():
 def shop():
     return template("shop.tpl" ,products=products)
 
+
+@route("/cart")
+def cart():
+    session = request.environ.get('beaker.session')
+    karfa = []
+
+    # lesum úr sessions þær vörur sem notandi hefur valið í körfu
+    if session.get('1'):
+        # notum get aðferð, vísum í key til að sækja gildi
+        vara1 = session.get('1')
+        karfa.append("AK-47 Bloodsport FN")
+
+    if session.get('2'):
+        vara2 = session.get('2')
+        karfa.append(vara2)
+
+    if session.get('3'):
+        vara3 = session.get('3')
+        karfa.append(vara3)
+
+    if session.get('4'):
+        vara4 = session.get('4')
+        karfa.append(vara4)
+
+    if session.get('5'):
+        vara5 = session.get('5')
+        karfa.append(vara5)
+
+    if session.get('6'):
+        vara6 = session.get('6')
+        karfa.append(vara6)
+    if session.get('7'):
+        vara7 = session.get('7')
+        karfa.append(vara7)
+
+    if session.get('8'):
+        vara8 = session.get('8')
+        karfa.append(vara8)
+
+
+    return template("cart.tpl", karfa=karfa)
+
+
 @route("/cart/add/<id:int>")
 def add_to_cart(id):
     if id == 1:
