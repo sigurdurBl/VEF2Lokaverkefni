@@ -5,7 +5,7 @@
     <title>Innskrá</title>
   </head>
   <body>
-  <form method='post'>
+  <form method='post' action='/post'>
       <h3>Nýskráningarform:</h3>
       Notendanafn:<br>
       <input type="text" name='user' required><br>
