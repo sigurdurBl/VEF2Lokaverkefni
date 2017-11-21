@@ -1,6 +1,7 @@
 from  bottle import run,route,redirect,request,post,template
 from sys import argv
 import pymysql
+from beaker.middleware import SessionMiddleware
 session_opts = {
     'session.type': 'file',
    # 'session.cookie_expires': 300,
