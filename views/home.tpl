@@ -6,8 +6,8 @@
 <body>
 	<div>
 		<h1>Welcome to Csgo side</h1>
-		<a href="/innskra"></a>
-		<a href="/nyskra"></a>
+		<p><a href="/innskra"></a></p>
+		<P><a href="/nyskra"></a></P>
 	</div>
 
 </body>
