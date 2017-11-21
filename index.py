@@ -8,6 +8,7 @@ session_opts = {
     'session.data_dir': './data',
     'session.auto': True
 }
+
 products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
             {"pid": 2, "name": "USP-S killconfirmed FN", "price": 40},
             {"pid": 3, "name": "AWP Dragon lore FN", "price": 2000},
@@ -92,7 +93,7 @@ def cart():
     if session.get('1'):
         # notum get aðferð, vísum í key til að sækja gildi
         vara1 = session.get('1')
-        karfa.append("AK-47 Bloodsport FN")
+        karfa.append(vara1)
 
     if session.get('2'):
         vara2 = session.get('2')
