@@ -51,6 +51,7 @@ def nyr():
         cur.close() # stundum sleppt, conn.close() lokar einnig cur.
         # lokum db tengingu
         conn.close()
+        return redirect("/shop")
 @route('/innskra')
 def inn():
     return template('login.tpl')
@@ -71,7 +72,7 @@ def doinn():
 
         cur.close()
         conn.close()
-        return template('shop.tpl')
+        return redirect("/shop")
 @route("/logout")
 def logout():
     return redirect("/")
