@@ -10,7 +10,7 @@
       Notendanafn:<br>
       <input type="text" name='user' required><br>
       Lykilorð verður að vera minsta kosti 8 stafir og 2 tölustafir :<br>
-      <input type="text" name='pass' required pattern="^[a-z]{8}\d{2}"><br>
+      <input type="text" name='pass' required pattern=""><br>
       <input type='submit' value='Innskrá'>
       <input type='reset' value='Hreinsa'>
   </form>    
