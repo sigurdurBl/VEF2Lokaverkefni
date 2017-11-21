@@ -9,8 +9,8 @@
       <h3>Nýskráningarform:</h3>
       Notendanafn:<br>
       <input type="text" name='user' required><br>
-      Lykilorð verður að vera minsta kosti 6 stafir og 3 tölustafir :<br>
-      <input type="text" name='pass' required pattern="^[a-z]{6}\d{3}"><br>
+      Lykilorð verður að vera minsta kosti 8 stafir og 2 tölustafir :<br>
+      <input type="text" name='pass' required pattern="^[a-z]{8}\d{2}"><br>
       <input type='submit' value='Innskrá'>
       <input type='reset' value='Hreinsa'>
   </form>    
