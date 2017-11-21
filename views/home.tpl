@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div>
-		<h1>login singup</h1>
+		<h1>Welcome to Csgo side</h1>
 		<a href="/innskra"></a>
 		<a href="/nyskra"></a>
 	</div>
