@@ -76,9 +76,10 @@ def doinn():
 @route("/logout")
 def logout():
     return redirect("/")
+
 @route("/shop")
 def shop():
-    return template("shop.tpl")
+    return template("shop.tpl" ,products=products)
 
 @route("/cart/add/<id:int>")
 def add_to_cart(id):
