@@ -25,7 +25,7 @@ def homepage():
 def nyr():
     return template('newlogin.tpl')
 
-@route('/donyskra', method='POST')
+@post('/donyskra')
 def nyr():
     user = request.forms.get('user')
     password = request.forms.get('pass')
@@ -55,7 +55,7 @@ def nyr():
 def inn():
     return template('login.tpl')
 
-@route('/doinnskra', method='POST')
+@post('/doinnskra')
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
