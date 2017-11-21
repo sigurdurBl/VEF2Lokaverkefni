@@ -5,7 +5,7 @@
     <title>login</title>
   </head>
   <body>
-  <form method='post' action='/post'">
+  <form method='post' action='/doinnskra'">
       <h3>Innskráningarform:</h3>
       Notendanafn:<br>
       <input type="text" name='user' required><br>
