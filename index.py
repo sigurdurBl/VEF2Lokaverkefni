@@ -25,7 +25,7 @@ def homepage():
 def nyr():
     return template('newlogin.tpl')
 
-@post('/donyskra')
+@route('/donyskra', method='POST')
 def nyr():
     user = request.forms.get('user')
     password = request.forms.get('pass')
@@ -55,7 +55,7 @@ def nyr():
 def inn():
     return template('login.tpl')
 
-@post('/doinnskra')
+@route('/doinnskra', method='POST')
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
@@ -75,6 +75,9 @@ def doinn():
 @route("/logout")
 def logout():
     return redirect("/")
+@route("/shop")
+def shop():
+    return template("shop.tpl")
 
 @route("/cart/add/<id:int>")
 def add_to_cart(id):
