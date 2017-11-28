@@ -1,4 +1,4 @@
-from  bottle import run,route,redirect,request,post,template
+from  bottle import run,route,redirect,request,post,template,app
 from sys import argv
 import pymysql
 from beaker.middleware import SessionMiddleware
@@ -8,7 +8,7 @@ session_opts = {
     'session.data_dir': './data',
     'session.auto': True
 }
-app = SessionMiddleware(bottle.app(), session_opts)
+app = SessionMiddleware(app(), session_opts)
 
 products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
             {"pid": 2, "name": "USP-S killconfirmed FN", "price": 40},
