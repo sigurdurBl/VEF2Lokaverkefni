@@ -130,7 +130,7 @@ def cart():
 def add_to_cart(id):
     if id == 1:
         session = request.environ.get('beaker.session')
-        session["1"] = "Vara 1"
+        session["1"] = "AK-47 Bloodsport FN"
         session.save()
         return redirect("/cart")
     if id == 2:
