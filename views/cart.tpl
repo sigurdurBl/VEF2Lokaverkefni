@@ -9,6 +9,7 @@
 <div>
     % if len(karfa) <= 0:
         <p>Það eru engar vörur í körfu</p>
+        <p><a href="/shop">Versla meira</a></p>
     % else:
         % for i in range(len(karfa)):
             <p> {{ karfa[i] }} <p>
