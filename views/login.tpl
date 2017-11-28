@@ -11,7 +11,7 @@
       <input type="text" name='user' required><br>
       Lykilorð <br>
       <input type="text" name='pass' required><br>
-      <input type='submit' value='Nýskrá'>
+      <input type='submit' value='Innskrá'>
       <input type='reset' value='Hreinsa'>
   </form>    
   </body>
