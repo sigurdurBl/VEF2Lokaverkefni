@@ -71,7 +71,6 @@ def doinn():
     print(result)
     # er u og p til í  db?
     if result[0] == 1:
-
         cur.close()
         conn.close()
         return redirect("/shop")
