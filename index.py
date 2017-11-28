@@ -8,7 +8,7 @@ session_opts = {
     'session.data_dir': './data',
     'session.auto': True
 }
-
+app = SessionMiddleware(bottle.app(), session_opts)
 products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
             {"pid": 2, "name": "USP-S killconfirmed FN", "price": 40},
             {"pid": 3, "name": "AWP Dragon lore FN", "price": 2000},
@@ -180,5 +180,5 @@ def remove_from_cart():
     session.delete()
     return redirect("/cart")
 
-run(host="0.0.0.0", port=argv[1])
+run(app=app,host="0.0.0.0", port=argv[1])
 
