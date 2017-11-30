@@ -86,6 +86,7 @@ def shop():
 
 @route("/cart")
 def cart():
+    summa = sum(products,["price"])
     username = request.get_cookie("account", secret='some-secret-key')
     if username:
         session = request.environ.get('beaker.session')
