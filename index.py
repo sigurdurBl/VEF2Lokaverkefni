@@ -1,4 +1,4 @@
-from  bottle import run,route,redirect,request,post,template,app
+from  bottle import run,route,redirect,request,post,template,app,response
 from sys import argv
 import pymysql
 from beaker.middleware import SessionMiddleware
@@ -32,29 +32,28 @@ def nyr():
 def nyr():
     user = request.forms.get('user')
     password = request.forms.get('pass')
+    if request.get_cookie("login") and request.get_cookie("password"):
 
-    # Connection object, búum til tengingu við gagnagrunn
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
-    # Cursor object, used to manage the context of a fetch operatio
-    cur = conn.cursor()
+        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
 
-    # Srepare and execute a database operation (query or command).
-    # SQL fyrirspurn, sækjum notanda úr db
-    cur.execute("SELECT count(*) FROM user where user=%s",(user))
-    # Fetch the next row of a query result set, returning a single sequence, or None when no more data is available.
-    result = cur.fetchone() #fáum tuple (runa eða listi af read-only objectum)
+        cur = conn.cursor()
 
-    print(result)
 
-    # notandi er ekki til
-    if result[0] == 0:
-        cur.execute("INSERT INTO user Values(%s,%s)", (user, password))
-        # Commit any pending transaction to the database.
-        conn.commit()
-        cur.close() # stundum sleppt, conn.close() lokar einnig cur.
-        # lokum db tengingu
-        conn.close()
-        return redirect("/shop")
+        cur.execute("SELECT count(*) FROM user where user=%s",(user))
+
+        result = cur.fetchone()
+
+        print(result)
+
+
+        if result[0] == 0:
+            cur.execute("INSERT INTO user Values(%s,%s)", (user, password))
+
+            conn.commit()
+            cur.close()
+
+            conn.close()
+            return redirect("/shop")
 @route('/innskra')
 def inn():
     return template('login.tpl')
@@ -63,20 +62,23 @@ def inn():
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
+    if request.get_cookie("login") and request.get_cookie("password"):
 
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
-    cur = conn.cursor()
+        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
+        cur = conn.cursor()
 
-    cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(user,password))
-    result = cur.fetchone()#fáum tuple
-    print(result)
-    # er u og p til í  db?
-    if result[0] == 1:
-        cur.close()
-        conn.close()
-        return redirect("/shop")
+        cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(user,password))
+        result = cur.fetchone()
+        print(result)
+
+        if result[0] == 1:
+            cur.close()
+            conn.close()
+            return redirect("/shop")
 @route("/logout")
 def logout():
+    response.set_cookie("login", "", expires=0)
+    response.set_cookie("password", "", expires=0)
     return redirect("/")
 
 @route("/shop")
@@ -89,9 +91,9 @@ def cart():
     session = request.environ.get('beaker.session')
     karfa = []
 
-    # lesum úr sessions þær vörur sem notandi hefur valið í körfu
+
     if session.get('1'):
-        # notum get aðferð, vísum í key til að sækja gildi
+
         vara1 = session.get('1')
         karfa.append(vara1)
 
@@ -172,11 +174,11 @@ def add_to_cart(id):
     else:
         return redirect("/shop")
 
-# fjarlægjum allar vörur úr körfu
+
 @route("/cart/remove")
 def remove_from_cart():
     session = request.environ.get('beaker.session')
-    # fjarlægjum allar vörur úr sessions
+
     session.delete()
     return redirect("/cart")
 
