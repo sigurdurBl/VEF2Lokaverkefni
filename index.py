@@ -10,14 +10,14 @@ session_opts = {
 }
 app = SessionMiddleware(app(), session_opts)
 
-products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": "55$"},
-            {"pid": 2, "name": "USP-S killconfirmed FN", "price": "40$"},
-            {"pid": 3, "name": "AWP Dragon lore FN", "price": "2000$"},
-            {"pid": 4, "name": "M4A1- Hyper Beast FN", "price": "61$"},
-            {"pid": 5, "name": "Desert Eagle Crimson Web FN", "price": "55$"},
-            {"pid": 6, "name": "FAMAS Roll Cage FN", "price": "7$"},
-            {"pid": 7, "name": "P250 Supernova FN ", "price": "1$"},
-            {"pid": 8, "name": "Krambit gamma doppler FN", "price": "360$"},
+products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
+            {"pid": 2, "name": "USP-S killconfirmed FN", "price": 40},
+            {"pid": 3, "name": "AWP Dragon lore FN", "price": 2000},
+            {"pid": 4, "name": "M4A1- Hyper Beast FN", "price": 61},
+            {"pid": 5, "name": "Desert Eagle Crimson Web FN", "price": 55},
+            {"pid": 6, "name": "FAMAS Roll Cage FN", "price": 7},
+            {"pid": 7, "name": "P250 Supernova FN ", "price": 1},
+            {"pid": 8, "name": "Krambit gamma doppler FN", "price": 360},
 
             ]
 @route("/")
