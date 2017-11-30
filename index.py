@@ -32,7 +32,7 @@ def nyr():
 def nyr():
     user = request.forms.get('user')
     password = request.forms.get('pass')
-
+    response.set_cookie("account", user, secret='some-secret-key')
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
 
     cur = conn.cursor()
@@ -61,6 +61,7 @@ def inn():
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
+    response.set_cookie("account", user, secret='some-secret-key')
 
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
     cur = conn.cursor()
@@ -75,8 +76,7 @@ def doinn():
         return redirect("/shop")
 @route("/logout")
 def logout():
-    response.set_cookie("user", "", expires=0)
-    response.set_cookie("pass", "", expires=0)
+    response.set_cookie("account", "", expires=0)
     return redirect("/")
 
 @route("/shop")
