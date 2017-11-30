@@ -86,44 +86,47 @@ def shop():
 
 @route("/cart")
 def cart():
-    session = request.environ.get('beaker.session')
-    karfa = []
+    username = request.get_cookie("account", secret='some-secret-key')
+    if username:
+        session = request.environ.get('beaker.session')
+
+        karfa = []
 
 
-    if session.get('1'):
+        if session.get('1'):
 
-        vara1 = session.get('1')
-        karfa.append(vara1)
+            vara1 = session.get('1')
+            karfa.append(vara1)
 
-    if session.get('2'):
-        vara2 = session.get('2')
-        karfa.append(vara2)
+        if session.get('2'):
+            vara2 = session.get('2')
+            karfa.append(vara2)
 
-    if session.get('3'):
-        vara3 = session.get('3')
-        karfa.append(vara3)
+        if session.get('3'):
+            vara3 = session.get('3')
+            karfa.append(vara3)
 
-    if session.get('4'):
-        vara4 = session.get('4')
-        karfa.append(vara4)
+        if session.get('4'):
+            vara4 = session.get('4')
+            karfa.append(vara4)
 
-    if session.get('5'):
-        vara5 = session.get('5')
-        karfa.append(vara5)
+        if session.get('5'):
+            vara5 = session.get('5')
+            karfa.append(vara5)
 
-    if session.get('6'):
-        vara6 = session.get('6')
-        karfa.append(vara6)
-    if session.get('7'):
-        vara7 = session.get('7')
-        karfa.append(vara7)
+        if session.get('6'):
+            vara6 = session.get('6')
+            karfa.append(vara6)
+        if session.get('7'):
+            vara7 = session.get('7')
+            karfa.append(vara7)
 
-    if session.get('8'):
-        vara8 = session.get('8')
-        karfa.append(vara8)
+        if session.get('8'):
+            vara8 = session.get('8')
+            karfa.append(vara8)
 
 
-    return template("cart.tpl", karfa=karfa)
+        return template("cart.tpl", karfa=karfa)
 
 
 @route("/cart/add/<id:int>")
