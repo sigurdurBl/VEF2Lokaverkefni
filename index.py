@@ -32,28 +32,27 @@ def nyr():
 def nyr():
     user = request.forms.get('user')
     password = request.forms.get('pass')
-    if request.get_cookie("user") and request.get_cookie("pass"):
 
-        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
 
-        cur = conn.cursor()
-
-
-        cur.execute("SELECT count(*) FROM user where user=%s",(user))
-
-        result = cur.fetchone()
-
-        print(result)
+    cur = conn.cursor()
 
 
-        if result[0] == 0:
-            cur.execute("INSERT INTO user Values(%s,%s)", (user, password))
+    cur.execute("SELECT count(*) FROM user where user=%s",(user))
 
-            conn.commit()
-            cur.close()
+    result = cur.fetchone()
 
-            conn.close()
-            return redirect("/shop")
+    print(result)
+
+
+    if result[0] == 0:
+        cur.execute("INSERT INTO user Values(%s,%s)", (user, password))
+
+        conn.commit()
+        cur.close()
+
+        conn.close()
+        return redirect("/shop")
 @route('/innskra')
 def inn():
     return template('login.tpl')
@@ -62,19 +61,18 @@ def inn():
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
-    if request.get_cookie("user") and request.get_cookie("pass"):
 
-        conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
-        cur = conn.cursor()
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
+    cur = conn.cursor()
 
-        cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(user,password))
-        result = cur.fetchone()
-        print(result)
+    cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(user,password))
+    result = cur.fetchone()
+    print(result)
 
-        if result[0] == 1:
-            cur.close()
-            conn.close()
-            return redirect("/shop")
+    if result[0] == 1:
+        cur.close()
+        conn.close()
+        return redirect("/shop")
 @route("/logout")
 def logout():
     response.set_cookie("user", "", expires=0)
