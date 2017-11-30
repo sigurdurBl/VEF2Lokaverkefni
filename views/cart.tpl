@@ -16,6 +16,7 @@
         % end
         <p><a href="/shop">Versla meira</a></p>
     <p><a href="/cart/remove">Fjarlægum allar vörur úr körfu</a></p>
+    <p>%sum("price")</p>
 </div>
 
 </body>
