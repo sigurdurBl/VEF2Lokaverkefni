@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href=" /css/styles.css">
   </head>
   <body>
-  <div>
+  <div class="class="block style-19">
     <form method='post' action='/donyskra'>
         <h3>Nýskráningarform:</h3>
         Notendanafn:<br>
