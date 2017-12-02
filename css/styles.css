@@ -5,14 +5,6 @@ body{
 
 }
 
-div{
-	border:1px solid black;
-	width: 300px;
-	height: 200px;
-	margin: auto;
-	text-align: center;
-	
-}
 .block + .block {
   margin-top: 2px
 }
@@ -32,7 +24,7 @@ h1 {
   height: 100vh;
   min-height: 300px;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 .style-19 {
   background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px;

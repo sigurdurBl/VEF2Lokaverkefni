@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="block style-19">
-      <form method='post' action='/doinnskra'">
+      <form method='post' action='/doinnskra'>
           <h3>Innskráningarform:</h3>
           Notendanafn:<br>
           <input type="text" name='user' required><br>
