@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
   </head>
   <body>
-    <div class="block style-19">
+    <div class=" style-19">
       <form method='post' action='/doinnskra'>
           <h3>Innskráningarform:</h3>
           Notendanafn:<br>
