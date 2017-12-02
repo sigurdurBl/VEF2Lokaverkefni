@@ -1,4 +1,4 @@
-from  bottle import run,route,redirect,request,post,template,app,response
+from  bottle import run,route,redirect,request,post,template,app,response,static_file
 from sys import argv
 import pymysql
 from beaker.middleware import SessionMiddleware
