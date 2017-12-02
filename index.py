@@ -182,6 +182,9 @@ def remove_from_cart():
 
     session.delete()
     return redirect("/cart")
+@route('/css/<filename:re:.*\.css>')
+def send_css(filename):
+    return static_file(filename, root='css')
 
 run(app=app,host="0.0.0.0", port=argv[1])
 

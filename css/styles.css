@@ -1,0 +1,63 @@
+body{
+	font:600 16px/18px 'Open Sans',sans-serif;
+	padding: 0px;
+	margin: 0px;
+
+}
+
+div{
+	border:1px solid black;
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	text-align: center;
+	
+}
+.block + .block {
+  margin-top: 2px
+}
+
+h1 {
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  text-align: center;
+  font-size: 5rem;
+  transform: translateY(-50%);
+  font-weight: normal
+}
+.block {
+  width: 100%;
+  height: 100vh;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden
+}
+.style-19 {
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px;
+  background-color: #12364a;
+  background-size: 12px 12px;
+}
+
+.style-19:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: radial-gradient(circle, transparent 0%, rgba(7, 9, 11, 0.56) 100%);
+}
+
+.style-19 h1 {
+  font-family: 'Wire One', sans-serif;
+  font-size: 9rem;
+  color: #EECCA7;
+  text-shadow: 1px 1px 0px #6C0107, 2px 2px 0px #6C0107, 3px 3px 0px #6C0107, 4px 4px 0px #6C0107, 5px 5px 0px #6C0107, 6px 6px 0px #6C0107, 7px 7px 0px #6C0107, 8px 8px 0px #6C0107, 9px 9px 0px rgba(0, 0, 0, .1), 10px 10px 0px rgba(0, 0, 0, .1), 11px 11px 0px rgba(0, 0, 0, .1), 12px 12px 0px rgba(0, 0, 0, .1), 13px 13px 0px rgba(0, 0, 0, .1), 14px 14px 0px rgba(0, 0, 0, .1), 15px 15px 0px rgba(0, 0, 0, .1), 16px 16px 0px rgba(0, 0, 0, .1), 17px 17px 0px rgba(0, 0, 0, .1), 18px 18px 0px rgba(0, 0, 0, .1), 19px 19px 0px rgba(0, 0, 0, .1), 20px 20px 0px rgba(0, 0, 0, .1), 21px 21px 0px rgba(0, 0, 0, .1), 22px 22px 0px rgba(0, 0, 0, .1), 23px 23px 0px rgba(0, 0, 0, .1), 24px 24px 0px rgba(0, 0, 0, .1), 25px 25px 0px rgba(0, 0, 0, .1), 26px 26px 0px rgba(0, 0, 0, .1)
+}
+input {
+	color: red;
+}
