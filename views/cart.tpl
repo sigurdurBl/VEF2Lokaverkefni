@@ -5,9 +5,10 @@
     <link rel="stylesheet" type="text/css" href="css/shop.css">
 </head>
 <body>
-<h1>Karfa</h1>
+
 
 <div class="mybutt one">
+    <h1>Karfa</h1>
     % if len(karfa) <= 0:
         <p>Það eru engar vörur í körfu</p>
         <p><a href="/shop">Versla meira</a></p>
