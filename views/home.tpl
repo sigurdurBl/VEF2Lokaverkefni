@@ -43,6 +43,7 @@
 <img src="images/famas.png">
 <img src="images/p250.png">
 <img src="images/krambit.png">
+<img src="images/awp.jpg">
 </figure>	
 
 </div>
