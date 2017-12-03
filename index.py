@@ -192,7 +192,7 @@ def send_image(filename):
 @route('/images/<filename:re:.*\.png>')
 def send_image(filename):
     # static/img directory
-    return static_file(filename, root='images', mimetype='images/jpg')
+    return static_file(filename, root='images', mimetype='images/png')
 
 run(app=app,host="0.0.0.0", port=argv[1])
 
