@@ -9,9 +9,9 @@
     <div class="center">
       <form method='post' action='/donyskra'>
         <h2>Nýskráningarform:</h2>
-        Notendanafn:<br>
+        <h3>Notendanafn:</h3><br>
         <input type="text" name='user' required><br>
-        Lykilorð:<br>
+        <h3>Lykilorð:</h3><br>
         <input type="text" name='pass' required><br>
         <input type='submit' value='Innskrá'>
         <input type='reset' value='Hreinsa'>

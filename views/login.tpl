@@ -8,10 +8,10 @@
   <body>
     <div class="center ">
       <form method='post' action='/doinnskra'">
-          <h3>Innskráningarform:</h3>
-          Notendanafn:<br>
+          <h2>Innskráningarform:</h2>
+          <h3>Notendanafn:</h3><br>
           <input type="text" name='user' required><br>
-          Lykilorð: <br>
+          <h3>Lykilorð:</h3> <br>
           <input type="text" name='pass' required><br>
           <input type='submit' value='Nýskrá'>
           <input type='reset' value='Hreinsa'>
