@@ -40,7 +40,7 @@
 <img src="images/ak47.png">
 <img src="images/usps.png">
 <img src="images/m4a1.jpg">
-<img src="images/desert.jpg">
+<img src="images/desert.png">
 <img src="images/famas.png">
 <img src="images/p250.png">
 <img src="images/krambit.png">
