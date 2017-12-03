@@ -188,11 +188,11 @@ def send_css(filename):
 @route('images/<filename:re:.*\.jpg>')
 def send_image(filename):
     # static/img directory
-    return static_file(filename, root='img', mimetype='image/jpg')
+    return static_file(filename, root='images', mimetype='images/jpg')
 @route('/images/<filename:re:.*\.png>')
 def send_image(filename):
     # static/img directory
-    return static_file(filename, root='img', mimetype='image/jpg')
+    return static_file(filename, root='images', mimetype='images/jpg')
 
 run(app=app,host="0.0.0.0", port=argv[1])
 
