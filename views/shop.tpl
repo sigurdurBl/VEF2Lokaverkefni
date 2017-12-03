@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/shop.css">
     </head>
 <body>
-<h2>Veldu vöru í körfu!</h2>
+<h2>Veldu vöru sem þú vilt fá</h2>
 
 <div class="myButt one">
     % for i in range(len(products)):
