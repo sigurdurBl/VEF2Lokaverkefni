@@ -25,20 +25,19 @@ body {
 	left:-135px;
 
 	@include transform(rotateZ(45deg));
-	}
+}
 .one {
 	border-color:#fff;
 	overflow:hidden;
 	color:#fff;
+}
 
 &:hover {
 		background-color:$red;
 		border-color:#fff;
 		color:#fff;
-
-		.insider {
-			@include transition(all 0.3s ease);
-			left:135px;
-		}
-	}
+}
+.insider {
+	@include transition(all 0.3s ease);
+	left:135px;
 }

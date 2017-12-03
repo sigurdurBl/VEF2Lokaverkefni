@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>karfa</title>
 </head>
 <body>
 <h1>Karfa</h1>
