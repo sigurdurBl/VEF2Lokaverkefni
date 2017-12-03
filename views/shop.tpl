@@ -11,7 +11,7 @@
 <div class="myButt one">
     % for i in range(len(products)):
     <button class="">
-    	<div class="insider"></div>
+    	
        <p> <a href="/cart/add/{{ products[i]["pid"] }}"> {{ products[i]["name"] }} </a> </p>
     </button>
     % end
