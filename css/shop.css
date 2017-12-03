@@ -3,6 +3,9 @@ body {
 	padding:0;
 	background-color:#222;
 }
+div{
+	text-align: center;
+}
 h2{
 	text-align: center;
 	color:#FF0000;
