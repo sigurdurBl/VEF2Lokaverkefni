@@ -7,13 +7,14 @@
 </head>
 <body>
 <h2>Veldu vöru í körfu!</h2>
+<button class="myButt one">
 <div>
     % for i in range(len(products)):
        <p> <a href="/cart/add/{{ products[i]["pid"] }}"> {{ products[i]["name"] }} </a> </p>
     % end
 </div>
 <a href="/logout"> log out </a>
-
+</button>
    
 </body>
 </html>
