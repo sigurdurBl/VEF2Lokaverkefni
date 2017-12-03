@@ -16,7 +16,8 @@
     </button>
     % end
 </div>
-<a href="/logout"> log out </a>
+<button class="mybutt one"><a href="/logout"> log out </a></button>
+
 
    
 </body>
