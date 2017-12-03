@@ -3,8 +3,8 @@
 <head>
     <title>Vefverslun</title>
     <meta charset="utf-8">
-    <link href='/css/shop.css' rel='stylesheet' type='text/css'>
-</head>
+    <link rel="stylesheet" type="text/css" href="css/shop.css">
+    </head>
 <body>
 <h2>Veldu vöru í körfu!</h2>
 
