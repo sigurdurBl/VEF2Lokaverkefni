@@ -39,12 +39,12 @@
 <figure>
 <img src="images/ak47.png">
 <img src="images/usps.png">
-<img src="images/m4a1.jpg">
+<img src="images/m4a1.png">
 <img src="images/desert.png">
 <img src="images/famas.png">
 <img src="images/p250.png">
 <img src="images/krambit.png">
-<img src="images/awp.jpg">
+<img src="images/awp.png">
 </figure>	
 
 </div>
