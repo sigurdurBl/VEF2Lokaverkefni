@@ -185,6 +185,14 @@ def remove_from_cart():
 @route('/css/<filename:re:.*\.css>')
 def send_css(filename):
     return static_file(filename, root='css')
+@route('images/<filename:re:.*\.jpg>')
+def send_image(filename):
+    # static/img directory
+    return static_file(filename, root='img', mimetype='image/jpg')
+@route('/images/<filename:re:.*\.png>')
+def send_image(filename):
+    # static/img directory
+    return static_file(filename, root='img', mimetype='image/jpg')
 
 run(app=app,host="0.0.0.0", port=argv[1])
 
