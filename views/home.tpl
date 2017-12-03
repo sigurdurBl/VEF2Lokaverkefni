@@ -22,7 +22,7 @@
 				<span>L</span>
 			</div></head>
 				<ul>
-					<li><a href="/home" class="active">home</a></li>
+					<li><a href="/" class="active">home</a></li>
 					<li><a href="/innskra">login</a></li>
 					<li><a href="/nyskra">new login</a></li>
 				</ul>
