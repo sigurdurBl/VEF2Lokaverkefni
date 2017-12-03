@@ -33,6 +33,19 @@
     		<h2>velkomin  csgo animal</h2>
     		<h2>you have to login to buy skins for csgo</h2>
     	</div>
+    	<h1>hear is some of the items you can buy on csgo animal</h1>
+    	<div id="slider" >
+<figure>
+<img src="images/ak47.png">
+<img src="images/usps.png">
+<img src="images/m4a1.jpg">
+<img src="images/desert.jpg">
+<img src="images/famas.png">
+<img src="images/p250.png">
+<img src="images/krambit.png">
+</figure>	
+
+</div>
 	
 </body>
 </html>
