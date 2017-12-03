@@ -32,8 +32,9 @@
     	<div class="style block">
     		<h2>velkomin  csgo animal</h2>
     		<h2>you have to login to buy skins for csgo</h2>
+    		<h2>slide down for a slideshow of items you can get</h2>
     	</div>
-    	<h1>hear is some of the items you can buy on csgo animal</h1>
+    	<h1>some of the items you can buy on csgo animal</h1>
     	<div id="slider" >
 <figure>
 <img src="images/ak47.png">
