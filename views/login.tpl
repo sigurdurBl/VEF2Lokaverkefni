@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/shop.css">
   </head>
   <body>
-    <div class=" ">
+    <div class="center ">
       <form method='post' action='/doinnskra'">
           <h3>Innskráningarform:</h3>
           Notendanafn:<br>
