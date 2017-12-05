@@ -9,7 +9,7 @@ session_opts = {
     'session.auto': True
 }
 app = SessionMiddleware(app(), session_opts)
-
+#hear are products that are used on webstore
 products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
             {"pid": 2, "name": "USP-S killconfirmed FN", "price": 40},
             {"pid": 3, "name": "AWP Dragon lore FN", "price": 2000},
@@ -23,28 +23,31 @@ products = [{"pid": 1, "name": "AK-47 Bloodsport FN", "price": 55},
 @route("/")
 def homepage():
     return template("home.tpl")
-
+#this routes you to a from for new login to make a new user on the webside
 @route('/nyskra')
 def nyr():
     return template('newlogin.tpl')
 
 @route('/donyskra', method='POST')
 def nyr():
+    #hear i request user from the froms
     user = request.forms.get('user')
     password = request.forms.get('pass')
+
     response.set_cookie("account", user, secret='some-secret-key')
+    #hear i connect to a database that contains a user info
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
 
     cur = conn.cursor()
 
-
+    #hear i check if  user is in database if not it vill append
     cur.execute("SELECT count(*) FROM user where user=%s",(user))
 
     result = cur.fetchone()
 
     print(result)
 
-
+    #hear i append user and redirect him to the web store
     if result[0] == 0:
         cur.execute("INSERT INTO user Values(%s,%s)", (user, password))
 
@@ -53,27 +56,28 @@ def nyr():
 
         conn.close()
         return redirect("/shop")
+#this takes you to login to login if user is already inn database
 @route('/innskra')
 def inn():
     return template('login.tpl')
-
 @route('/doinnskra', method='POST')
 def doinn():
     user = request.forms.get('user')
     password = request.forms.get('pass')
     response.set_cookie("account", user, secret='some-secret-key')
-
+    # hear we connect to database
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1010992109', passwd='mypassword', db='1010992109_vef2lokaverkefni')
     cur = conn.cursor()
-
+    #hear we check if user is in database
     cur.execute("SELECT count(*) FROM user where user=%s and pass=%s",(user,password))
     result = cur.fetchone()
     print(result)
-
+    #if user is in database he wil be redirect to the web store
     if result[0] == 1:
         cur.close()
         conn.close()
         return redirect("/shop")
+#this is where you logout from cart
 @route("/logout")
 def logout():
     response.set_cookie("account", "", expires=0)
@@ -83,7 +87,7 @@ def logout():
 def shop():
     return template("shop.tpl" ,products=products)
 
-
+#this is the users cart that saves the items that user wants to buy
 @route("/cart")
 def cart():
     username = request.get_cookie("account", secret='some-secret-key')
@@ -128,7 +132,7 @@ def cart():
 
         return template("cart.tpl", karfa=karfa)
 
-
+#hear you add the products in to your cart
 @route("/cart/add/<id:int>")
 def add_to_cart(id):
     if id == 1:
